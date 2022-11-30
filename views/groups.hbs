@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/groups.css">
+    <title>Trips</title>
+</head>
+
+<body>
+    <H1 class="title">ALL TRIPS</H1>
+{{#each groups}}
+<section class="container">
+<div class="row">
+  <div class="card-title">
+  id: <b>{{id}}</b>
+  name: <b class="name">{{name}}</b>
+  </div>
+  <div class="card-body"><h2>TRIP</h2><P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit error recusandae iusto soluta magni repudiandae itaque minus fugit! Pariatur ab velit placeat, officiis tenetur deleniti.</P><button class="btn">Read More</button></div>
+</div>
+</section>
+{{/each}}
+<div class="card-body">
+  <form action="/" method="POST">
+    <div class="form-group">
+      <label for="groupId">Insert id to add:</label>
+      <input class="form-control" id="groupId" name="groupId" placeholder="Enter id">
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+  <form action="/auth/logout" method="POST">
+    <button type="submit" class="btn btn-primary">Log Out</button>
+  </form>
+</div>
+
+<H1 class="title">MY TRIPS</H1>
+{{#each myGroups}}
+<section class="bills">
+  <div class="href">
+<a href="/bills/{{id}}">
+<div class="my-trips">
+  <div class="row">
+    id: <b>{{id}}</b>
+    name: <b>{{name}}</b>
+  </div>
+  </div>
+</a>
+</div>
+</section>
+
+{{/each}}
+</body>
+
+</html>
